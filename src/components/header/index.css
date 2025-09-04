@@ -1,0 +1,9 @@
+li {
+    list-style: none;
+}
+.bg-container-navbar {
+    display: flex;
+}
+.ul-navbar-container {
+    display: flex;
+}
