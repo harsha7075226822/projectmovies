@@ -2,11 +2,6 @@ import React, { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
-
-
 export function AuthProvider({ children }) {
   const [authData, setAuthData] = useState({
     username: "",
@@ -23,3 +18,6 @@ export function AuthProvider({ children }) {
   );
 }
 
+export function useAuth() {
+  return useContext(AuthContext);
+}

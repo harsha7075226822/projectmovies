@@ -1,7 +1,6 @@
 import './App.css'
 import {BrowserRouter, Routes, Route} from 'react-router'
 import AccountPage from './components/account'
-import MovieItem from './components/MovieItem'
 import MovieHomepage from './components/movieshomepage'
 import PageNotFound from './components/pageNotFound'
 import PopularPage from './components/popularpage'
@@ -31,15 +30,11 @@ function App() {
           element={<ProtectedRoute><PopularPage /></ProtectedRoute>}
         />
         <Route
-          path="/moviedetails"
-          element={<ProtectedRoute><MovieItem /></ProtectedRoute>}
-        />
-        <Route
           path="/movies-app/movies/:movieId"
           element={<ProtectedRoute><MovieItemDetails /></ProtectedRoute>}
         />
         <Route
-          path="movies-app/movies-search"
+          path="/movies-app/movies-search"
           element={<ProtectedRoute><SearchMovie /></ProtectedRoute>}
         />
         <Route path="/account" element={<AccountPage />} />
