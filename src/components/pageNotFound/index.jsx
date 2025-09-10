@@ -10,12 +10,12 @@ const PageNotFound = () => {
       }}
     >
       {/* Title */}
-      <h1 className="text-white text-5xl md:text-6xl font-bold mb-4">
+      <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
         Lost Your Way ?
       </h1>
 
       {/* Subtitle */}
-      <p className="text-white text-lg md:text-xl max-w-lg mb-6">
+      <p className="text-white text-base sm:text-lg md:text-xl max-w-lg mb-6">
         We are sorry the page you requested could not be found.
         <br />
         Please go back to the homepage.

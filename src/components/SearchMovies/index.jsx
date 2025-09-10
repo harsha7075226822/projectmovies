@@ -82,9 +82,9 @@ function SearchMovie() {
     const {data} = moviesData
     return (
       <div>
-        <div className="bg-black min-h-screen  px-10 py-10"> 
-          <div className="w-full max-w-6xl mx-auto px-4 my-10">
-            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <div className="bg-black min-h-screen px-4 sm:px-6 lg:px-10 py-8"> 
+          <div className="w-full max-w-6xl mx-auto my-6 sm:my-10">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
               {data.map((movie) => (
                 <MovieItem key={movie.id} eachMovie={movie} />
               ))}

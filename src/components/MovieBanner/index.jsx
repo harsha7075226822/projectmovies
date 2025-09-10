@@ -38,8 +38,8 @@ function MovieBanner() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-[90vh] bg-black">
-        <Loading height="h-[100px]" />
+      <div className="flex justify-center items-center h-[50vh] sm:h-[70vh] lg:h-[90vh] bg-black">
+        <Loading height="h-[80px] sm:h-[100px]" />
       </div>
     )
   }

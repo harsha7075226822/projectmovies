@@ -32,24 +32,24 @@ function AccountPage() {
 
   return (
     <div>
-      <div className='bg-black h-[76px]'>
+      <div className='bg-black h-[60px] sm:h-[76px]'>
         <NavbarPage />
       </div>
-      <div className="flex justify-center items-center h-[77vh] bg-black">
-        <div className="w-full max-w-2xl bg-white p-8">
-          <h1 className="text-2xl font-bold mb-6">Account</h1>
+      <div className="flex justify-center items-center min-h-[70vh] bg-black px-4 sm:px-6">
+        <div className="w-full max-w-2xl bg-white p-6 sm:p-8">
+          <h1 className="text-xl sm:text-2xl font-bold mb-6">Account</h1>
 
           {/* Membership Section */}
           <div className="border-t border-b py-4">
-            <p className="text-gray-500 font-medium mb-2">Member ship</p>
-            <p className='text-gray-500'><strong>Username:</strong> {authData.username}</p>
-            <p className='text-gray-500'><strong>Password:</strong> {password? originalPass : star }</p>
-            {!see ? <button className='bg-gray-300 border border-2 p-1 rounded-lg' onClick={seePassword}>see password</button> : <button className='bg-gray-300 border border-2 p-1 rounded-lg' onClick={HidePassword}>hide password</button> }
+            <p className="text-gray-600 font-medium mb-2">Member ship</p>
+            <p className='text-gray-700 break-all'><strong>Username:</strong> {authData.username}</p>
+            <p className='text-gray-700'><strong>Password:</strong> {password? originalPass : star }</p>
+            {!see ? <button className='mt-2 bg-gray-200 border px-3 py-1 rounded-md' onClick={seePassword}>see password</button> : <button className='mt-2 bg-gray-200 border px-3 py-1 rounded-md' onClick={HidePassword}>hide password</button> }
           </div>
 
           {/* Plan Details Section */}
           <div className="border-b py-4">
-            <p className="text-gray-500 font-medium mb-2">Plan details</p>
+            <p className="text-gray-600 font-medium mb-2">Plan details</p>
             <div className="flex items-center gap-3">
               <span className="text-gray-800 font-medium">Premium</span>
               <span className="text-xs border px-2 py-1 rounded bg-gray-100 text-gray-700">
@@ -66,8 +66,8 @@ function AccountPage() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col space-x-6 justify-center items-center bg-black p-5">
-        <div className='flex'>
+      <div className="flex flex-col justify-center items-center bg-black p-5">
+        <div className='flex gap-3'>
           <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
             <FaGoogle className="text-red-500 text-3xl hover:text-red-700 transition duration-300 mr-2" />
           </a>

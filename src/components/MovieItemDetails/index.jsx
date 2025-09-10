@@ -61,23 +61,23 @@ function MovieItemDetails() {
       <div className="bg-black text-white min-h-screen">
         {/* Banner Section */}
         {isLoading ? <Loading height="h-[100vh]" /> : 
-        <div className="relative w-full h-[95vh] bg-cover bg-center">
+        <div className="relative w-screen h-[100svh] bg-cover bg-center">
           <img
             src={`${uniqueMovie.backdropPath}`}
             alt="Avengers Banner"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
 
           {/* Movie Info Overlay */}
-          <div className="absolute bottom-17 left-10 max-w-2xl">
-            <h1 className="text-4xl font-bold mb-2">{uniqueMovie.title}</h1>
-            <div className="flex items-center gap-4 text-gray-300 text-sm mb-4">
+          <div className="absolute bottom-10 sm:bottom-16 left-4 sm:left-10 max-w-xl sm:max-w-2xl pr-6">
+            <h1 className="text-2xl sm:text-4xl font-bold mb-2 sm:mb-3">{uniqueMovie.title}</h1>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
               <span>{parseInt(uniqueMovie.runtime/60)}h {parseInt(uniqueMovie.runtime%60)}m</span>
               <span className="border px-2 py-[2px] rounded text-xs">{uniqueMovie.adult ? "A" : "U/A" }</span>
               <span>{new Date(uniqueMovie.releaseDate).getFullYear()}</span>
             </div>
-            <p className="text-gray-300 text-base mb-4">
+            <p className="text-gray-300 text-xs sm:text-base mb-4 line-clamp-3 sm:line-clamp-4">
               {uniqueMovie.overview}
             </p>
             <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">
@@ -87,7 +87,7 @@ function MovieItemDetails() {
         </div> }
 
         {/* Movie Details Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-10 py-10 text-gray-300 text-sm border-b border-gray-700 relative bottom-15">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4 sm:px-8 lg:px-10 py-8 sm:py-10 text-gray-300 text-sm border-b border-gray-700 -mt-6 sm:-mt-10">
           <div>
             <h3 className="font-semibold mb-2 text-white">Genres</h3>
             <ul>
@@ -122,7 +122,7 @@ function MovieItemDetails() {
         {/* More Like This */}
         <div className="px-4 sm:px-6 lg:px-10 py-8">
           <h2 className="text-2xl font-semibold mb-6">More like this</h2>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 w-full max-w-full">
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 w-full max-w-full">
             {SimilarMovies.map(likeMovie => {
               const details = {
                 id: likeMovie.id,

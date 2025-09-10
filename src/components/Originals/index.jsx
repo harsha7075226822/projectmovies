@@ -79,11 +79,11 @@ function Originals() {
     const {data} = moviesData
     return (
       <div className="bg-black text-white">
-        <div className="relative flex items-center">
+        <div className="relative flex items-center px-2 sm:px-4">
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
-            className="absolute left-0 z-10 bg-black/70 hover:bg-black p-2 rounded-full"
+            className="absolute left-1 sm:left-0 z-10 bg-black/60 hover:bg-black p-2 rounded-full"
           >
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
@@ -91,13 +91,13 @@ function Originals() {
           {/* Movie List */}
           <div
             ref={scrollRef}
-            className="flex space-x-4 overflow-x-scroll no-scrollbar"
+            className="flex gap-3 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2"
           >
-            {
-              data.map(movie => (
-                <MovieItem key={movie.id} eachMovie={movie} />
-              ))
-            }
+            {data.map(movie => (
+              <div key={movie.id} className="snap-start">
+                <MovieItem eachMovie={movie} />
+              </div>
+            ))}
           </div>
 
           {/* Right Arrow */}
@@ -158,8 +158,8 @@ function Originals() {
   }
 
  return (
-  <div className="bg-black text-white px-6 py-8 mr-5 ml-5">
-    <h2 className="text-xl font-semibold mb-4">Originals</h2>
+  <div className="bg-black text-white px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
+    <h2 className="text-lg sm:text-xl font-semibold mb-4">Originals</h2>
     {renderView()}
   </div>
  )
